@@ -1,0 +1,4 @@
+- 1.4
+- URL added
+  NOTE: this version is _required_ for new version of vlan patch (1.0.3 and
+  older). Older vconfig won't work.
