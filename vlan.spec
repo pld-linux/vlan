@@ -15,6 +15,7 @@ Source1:	http://www.candelatech.com/~greear/vlan/cisco_howto.html
 # Source1-md5:	cf0422b58d1a83d088a65b0fb052ec8a
 URL:		http://www.candelatech.com/~greear/vlan.html
 %{?with_dist_kernel:Conflicts:	kernel < 2.4}
+Obsoletes:	vconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
