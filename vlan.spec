@@ -23,7 +23,7 @@ vconfig, który pozwala na zarz±dzanie vlan'ami.
 %prep
 %setup -q -n %{name}
 
-%{__install} %{SOURCE1} .
+install %{SOURCE1} .
 
 %build
 %{__make} CC="%{__cc} %{rpmcflags} %{rpmldflags}" CCC="%{__cc}"
