@@ -25,25 +25,23 @@ vconfig, który pozwala na zarz±dzanie vlan'ami.
 %prep
 %setup -q -n %{name}.%{version}
 
+%{__install} %{SOURCE1} .
+
 %build
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT/%{_sbindir}
-install -d $RPM_BUILD_ROOT/%{_datadir}/doc/%{name}-%{version}
 
 gzip -9nf README CHANGELOG 
 
 install vconfig $RPM_BUILD_ROOT/%{_sbindir}/vconfig
-install %{SOURCE1} $RPM_BUILD_ROOT/%{_datadir}/doc/%{name}-%{version}
-install {vlan.html,vlan_test.pl,README.gz,CHANGELOG.gz}	$RPM_BUILD_ROOT/%{_datadir}/doc/%{name}-%{version}/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc *.gz *.html vlan_test.pl
 %attr(755,root,root) %{_sbindir}/vconfig
-%{_datadir}/doc/%{name}-%{version}/*
