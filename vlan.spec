@@ -2,7 +2,7 @@ Summary:	802.1q vlan Linux implementation
 Summary(pl):	Implementacja vlan'ów 802.1q dla Linux'a
 Name:		vlan
 Version:	1.0.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Networking/Utilities
 Group(de):	Netzwerkwesen/Werkzeuge
@@ -11,6 +11,8 @@ Source0:	http://scry.wanfear.com/~greear/vlan/%{name}.%{version}.tar.gz
 Source1:	http://scry.wanfear.com/~greear/vlan/cisco_howto.html
 BuildRequires:	gcc-c++
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_sbindir	/sbin
 
 %description
 This is vlan implementation 802.1q for Linux. There is vconfig inside,
