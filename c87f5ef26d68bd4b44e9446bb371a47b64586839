@@ -1,0 +1,4 @@
+- initial release of 802.1q vlan's for Linux.
+  NOTE: It is needed to add vlan patch from vlan.1.0.1.tar.gz to our
+  kernels (2.4 has it AFAIR). rc-scripts should be corrected to add
+  this feature.
