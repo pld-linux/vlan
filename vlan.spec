@@ -32,8 +32,6 @@ install %{SOURCE1} .
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/{%{_sbindir},%{_mandir}/man8}
 
-gzip -9nf README CHANGELOG
-
 install vconfig $RPM_BUILD_ROOT%{_sbindir}/vconfig
 #install *.8     $RPM_BUILD_ROOT%{_mandir}/man8
 
@@ -42,6 +40,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz *.html vlan_test.pl
+%doc README CHANGELOG *.html vlan_test.pl
 %attr(755,root,root) %{_sbindir}/vconfig
 #%{_mandir}/man?/*
