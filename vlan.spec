@@ -23,7 +23,7 @@ Implementacja vlan'ów 802.1q dla Linux'a. Pakiet zawiera program
 vconfig, który pozwala na zarz±dzanie vlan'ami.
 
 %prep
-%setup -q -n %{name}.%{version}
+%setup -q -n %{name}
 
 %{__install} %{SOURCE1} .
 
