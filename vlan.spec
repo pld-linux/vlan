@@ -1,13 +1,16 @@
+# --without	dist_kernel	(don't add kernel related dependencies)
+
 Summary:	802.1q vlan Linux implementation
 Summary(pl):	Implementacja vlanów 802.1q dla Linuksa
 Name:		vlan
 Version:	1.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://www.candelatech.com/~greear/vlan/%{name}.%{version}.tar.gz
 Source1:	http://www.candelatech.com/~greear/vlan/cisco_howto.html
 URL:		http://www.candelatech.com/~greear/vlan.html
+%{!?_without_dist_kernel:Conflicts:	kernel < 2.4}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
