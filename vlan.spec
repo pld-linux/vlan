@@ -3,12 +3,12 @@
 Summary:	802.1q vlan Linux implementation
 Summary(pl):	Implementacja vlanów 802.1q dla Linuksa
 Name:		vlan
-Version:	1.6
-Release:	3
+Version:	1.7m
+Release:	1
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://www.candelatech.com/~greear/vlan/%{name}.%{version}.tar.gz
-# Source0-md5:	1e169a90aac8803a1897beb96e240b02
+# Source0-md5:	0acfba75e0eb69f392a21e24af1addde
 Source1:	http://www.candelatech.com/~greear/vlan/cisco_howto.html
 # Source1-md5:	cf0422b58d1a83d088a65b0fb052ec8a
 URL:		http://www.candelatech.com/~greear/vlan.html
