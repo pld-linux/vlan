@@ -14,7 +14,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is vlan implementation 802.1q for Linux. There is vconfig inside,
-which allows you to manage vlans. 
+which allows you to manage vlans.
 
 %description -l pl
 Implementacja vlan'ów 802.1q dla Linux'a. Pakiet zawiera program
@@ -32,7 +32,7 @@ vconfig, który pozwala na zarz±dzanie vlan'ami.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/{%{_sbindir},%{_mandir}/man8}
 
-gzip -9nf README CHANGELOG 
+gzip -9nf README CHANGELOG
 
 install vconfig $RPM_BUILD_ROOT%{_sbindir}/vconfig
 install *.8     $RPM_BUILD_ROOT%{_mandir}/man8/
