@@ -5,10 +5,6 @@ Version:	1.5
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
-Group(de):	Netzwerkwesen/Werkzeuge
-Group(es):	Red/Utilitarios
-Group(pl):	Sieciowe/Narzêdzia
-Group(pt_BR):	Rede/Utilitários
 Source0:	http://www.candelatech.com/~greear/vlan/%{name}.%{version}.tar.gz
 Source1:	http://www.candelatech.com/~greear/vlan/cisco_howto.html
 URL:		http://www.candelatech.com/~greear/vlan.html
