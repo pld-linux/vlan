@@ -1,13 +1,16 @@
+# --without	dist_kernel	(don't add kernel related dependencies)
+
 Summary:	802.1q vlan Linux implementation
 Summary(pl):	Implementacja vlanów 802.1q dla Linuksa
 Name:		vlan
-Version:	1.0.3
-Release:	2
+Version:	1.6
+Release:	3
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://www.candelatech.com/~greear/vlan/%{name}.%{version}.tar.gz
 Source1:	http://www.candelatech.com/~greear/vlan/cisco_howto.html
 URL:		http://www.candelatech.com/~greear/vlan.html
+%{!?_without_dist_kernel:Conflicts:	kernel < 2.4}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
@@ -33,7 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/{%{_sbindir},%{_mandir}/man8}
 
 install vconfig $RPM_BUILD_ROOT%{_sbindir}/vconfig
-#install *.8     $RPM_BUILD_ROOT%{_mandir}/man8
+install *.8     $RPM_BUILD_ROOT%{_mandir}/man8
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -42,4 +45,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README CHANGELOG vlan.html cisco_howto.html vlan_test.pl
 %attr(755,root,root) %{_sbindir}/vconfig
-#%{_mandir}/man?/*
+%{_mandir}/man?/*
