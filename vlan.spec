@@ -1,16 +1,15 @@
 Summary:	802.1q vlan Linux implementation
 Summary(pl):	Implementacja vlan'ów 802.1q dla Linux'a
 Name:		vlan
-Version:	1.4
+Version:	1.5
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
 Group(de):	Netzwerkwesen/Werkzeuge
 Group(pl):	Sieciowe/Narzêdzia
-Source0:	http://scry.wanfear.com/~greear/vlan/%{name}.%{version}.tar.gz
-Source1:	http://scry.wanfear.com/~greear/vlan/cisco_howto.html
-URL:		http://scry.wanfear.com/~greear/vlan.html
-BuildRequires:	gcc-c++
+Source0:	http://www.candelatech.com/~greear/vlan/%{name}.%{version}.tar.gz
+Source1:	http://www.candelatech.com/~greear/vlan/cisco_howto.html
+URL:		http://www.candelatech.com/~greear/vlan.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
@@ -29,15 +28,16 @@ vconfig, który pozwala na zarz±dzanie vlan'ami.
 %{__install} %{SOURCE1} .
 
 %build
-%{__make}
+%{__make} CC="%{__cc} %{rpmcflags} %{rpmldflags}" CCC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_sbindir}
+install -d $RPM_BUILD_ROOT/{%{_sbindir},%{_mandir}/man8}
 
 gzip -9nf README CHANGELOG 
 
-install vconfig $RPM_BUILD_ROOT/%{_sbindir}/vconfig
+install vconfig $RPM_BUILD_ROOT%{_sbindir}/vconfig
+install *.8     $RPM_BUILD_ROOT%{_mandir}/man8/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -46,3 +46,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz *.html vlan_test.pl
 %attr(755,root,root) %{_sbindir}/vconfig
+%{_mandir}/man?/*
