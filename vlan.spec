@@ -1,5 +1,7 @@
-# --without	dist_kernel	(don't add kernel related dependencies)
-
+#
+# Conditional build:
+%bcond_without	dist_kernel	# (don't add kernel related dependencies)
+#
 Summary:	802.1q vlan Linux implementation
 Summary(pl):	Implementacja vlanów 802.1q dla Linuksa
 Name:		vlan
@@ -12,7 +14,7 @@ Source0:	http://www.candelatech.com/~greear/vlan/%{name}.%{version}.tar.gz
 Source1:	http://www.candelatech.com/~greear/vlan/cisco_howto.html
 # Source1-md5:	cf0422b58d1a83d088a65b0fb052ec8a
 URL:		http://www.candelatech.com/~greear/vlan.html
-%{!?_without_dist_kernel:Conflicts:	kernel < 2.4}
+%{?with_dist_kernel:Conflicts:	kernel < 2.4}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
