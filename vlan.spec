@@ -1,7 +1,7 @@
 Summary:	802.1q vlan Linux implementation
 Summary(pl):	Implementacja vlanów 802.1q dla Linuksa
 Name:		vlan
-Version:	1.5
+Version:	1.6
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
@@ -26,7 +26,7 @@ vconfig, który pozwala na zarz±dzanie vlanami.
 install %{SOURCE1} .
 
 %build
-%{__make} CC="%{__cc} %{rpmcflags} %{rpmldflags}" CCC="%{__cc}"
+%{__make} CC="%{__cc}" CCFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" CCC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
