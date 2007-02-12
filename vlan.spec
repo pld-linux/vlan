@@ -3,7 +3,7 @@
 %bcond_without	dist_kernel	# (don't add kernel related dependencies)
 #
 Summary:	802.1q vlan Linux implementation
-Summary(pl.UTF-8):   Implementacja vlanów 802.1q dla Linuksa
+Summary(pl.UTF-8):	Implementacja vlanów 802.1q dla Linuksa
 Name:		vlan
 Version:	1.9
 Release:	1
