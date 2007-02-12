@@ -3,7 +3,7 @@
 %bcond_without	dist_kernel	# (don't add kernel related dependencies)
 #
 Summary:	802.1q vlan Linux implementation
-Summary(pl):	Implementacja vlanów 802.1q dla Linuksa
+Summary(pl.UTF-8):   Implementacja vlanÃ³w 802.1q dla Linuksa
 Name:		vlan
 Version:	1.9
 Release:	1
@@ -24,9 +24,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This is vlan implementation 802.1q for Linux. There is vconfig inside,
 which allows you to manage vlans.
 
-%description -l pl
-Implementacja vlanów 802.1q dla Linuksa. Pakiet zawiera program
-vconfig, który pozwala na zarz±dzanie vlanami.
+%description -l pl.UTF-8
+Implementacja vlanÃ³w 802.1q dla Linuksa. Pakiet zawiera program
+vconfig, ktÃ³ry pozwala na zarzÄ…dzanie vlanami.
 
 %prep
 %setup -q -n %{name}
