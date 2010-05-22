@@ -8,7 +8,7 @@ Name:		vlan
 Version:	1.9
 Release:	1
 License:	GPL
-Group:		Networking/Utilities
+Group:		Networking/Admin
 Source0:	http://www.candelatech.com/~greear/vlan/%{name}.%{version}.tar.gz
 # Source0-md5:	5f0c6060b33956fb16e11a15467dd394
 Source1:	http://www.candelatech.com/~greear/vlan/cisco_howto.html
