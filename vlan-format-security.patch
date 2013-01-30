@@ -1,0 +1,12 @@
+diff -urN vlan/vconfig.c vlan.new/vconfig.c
+--- vlan/vconfig.c	2005-07-29 19:38:42.000000000 +0200
++++ vlan.new/vconfig.c	2013-01-30 21:52:38.455449972 +0100
+@@ -63,7 +63,7 @@
+ "            is OFF.\n";
+ 
+ void show_usage() {
+-   fprintf(stdout,usage);
++   fputs(usage, stdout);
+ }
+ 
+ int hex_to_bytes(char* bytes, int bytes_length, char* hex_str) {
