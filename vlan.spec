@@ -19,6 +19,8 @@ Patch0:		%{name}-format-security.patch
 Obsoletes:	vconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_debugsource_packages	0
+
 %define		_sbindir	/sbin
 
 %description
