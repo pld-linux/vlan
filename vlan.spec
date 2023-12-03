@@ -19,8 +19,6 @@ Patch0:		%{name}-format-security.patch
 Obsoletes:	vconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_debugsource_packages	0
-
 %define		_sbindir	/sbin
 
 %description
@@ -39,7 +37,12 @@ install %{SOURCE1} .
 
 %build
 %{__make} clean
-%{__make} CC="%{__cc}" CCFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" CCC="%{__cc}"
+%{__make} \
+	CC="%{__cc}" \
+	CCC="%{__cc}" \
+	CCFLAGS="%{rpmcflags}" \
+	LDFLAGS="%{rpmldflags}" \
+	STRIP=:
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -55,4 +58,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README CHANGELOG vlan.html cisco_howto.html vlan_test.pl
 %attr(755,root,root) %{_sbindir}/vconfig
-%{_mandir}/man?/*
+%{_mandir}/man8/vconfig.8*
